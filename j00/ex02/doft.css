@@ -2,7 +2,7 @@ body {
     background-color: #505050;
 }
 
-div {
+.div_main {
     position: absolute;
     border-radius: 10px;
     box-shadow: 8px 8px 10px black;
@@ -10,10 +10,11 @@ div {
 
 .title_bar {
     background-color: #909090;
+    position: absolute;
     width: 72%;
-    height: 115px;
+    height: 15%;
     margin: auto;
-    margin-top: 8px;
+    margin-top: 0.5%;
     right: 0;
     left: 0;
 }
@@ -43,19 +44,19 @@ div {
 }
 
 .magnify {
-    position: relative;
+    position: static;
     float: right;
     height: 105%;
+    width: 23%;
     bottom: -8%;
     margin-right: -2%;
 }
 
 .map {
-    position: absolute;
     background-color: #909090;
     width: 50%;
-    height: 47%;
-    margin-top: 140px;
+    height: 50%;
+    top: 19%;
     margin-left: 24.5%;
 }
 
@@ -69,10 +70,9 @@ div {
 
 .actions {
     background-color: #909090;
-    position: absolute;
     width: 7.5%;
     height: 36%;
-    margin-top: 140px;
+    top: 19%;
     margin-left: 15.5%;
 }
 
@@ -91,15 +91,14 @@ div {
 
 .objects {
     background-color: #909090;
-    position: absolute;
     width: 7.5%;
     height: 36%;
-    margin-top: 140px;
+    top: 19%;
     margin-left: 76%;
 }
 
 .TFM {
-    position: relative;
+    position: absolute;
     height: 23%;
     width: auto;
     left: 25%;
@@ -107,10 +106,22 @@ div {
 }
 
 .towel {
-    position: relative;
-    float: right;
+    position: absolute;
     height: 13%;
     width: auto;
-    top: 4.5%;
-    right: 25%;
+    margin: auto;
+    top: 29%;
+    right: 0;
+    left: 0;
+}
+
+.brick {
+    position: absolute;
+    display: block;
+    top: 45%;
+    left: 7%;
+    width: 86%;
+    height: 20%;
+    background: url("resources/brick.jpg");
+    background-repeat: repeat;
 }
