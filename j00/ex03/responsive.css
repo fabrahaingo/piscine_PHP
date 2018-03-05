@@ -1,0 +1,81 @@
+h1 {
+  text-decoration: underline;
+  text-align: center;
+  font-size: 3vw;
+}
+
+img.meme_mendeleiev {
+  display: block;
+  width: 30%;
+  margin: auto;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 0;
+  line-height: 25%;
+}
+
+p.name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 3vw;
+}
+
+p.mass {
+  text-align: right;
+  margin-top: 10%;
+  margin-right: 5%;
+  font-size: 1vw;
+  font-style: italic;
+}
+
+p.num {
+  margin-bottom: 10%;
+  margin-left: 5%;
+  font-size: 1vw;
+}
+
+td.non_metal {
+  background-color: #dd99ff;
+}
+
+td.alkaline {
+  background-color: #ffbf80;
+}
+
+td.alk_earth {
+  background-color: #ffc266;
+}
+
+td.transition {
+  background-color: #bfff80;
+}
+
+td.others {
+  background-color: #ffff80;
+}
+
+td.semi_metal {
+  background-color: #80ff80;
+}
+
+td.halogen {
+  background-color: #ff80d5;
+}
+
+td.noble {
+  background-color: #80d4ff;
+}
+
+td.lanthanoid {
+  background-color: #d9b38c;
+}
+
+td.actinoid {
+  background-color: #996633;
+}
+
+td.unknown {
+  background-color: #c2d6d6;
+}
