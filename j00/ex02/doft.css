@@ -1,0 +1,116 @@
+body {
+    background-color: #505050;
+}
+
+div {
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 8px 8px 10px black;
+}
+
+.title_bar {
+    background-color: #909090;
+    width: 72%;
+    height: 115px;
+    margin: auto;
+    margin-top: 8px;
+    right: 0;
+    left: 0;
+}
+
+.title_pic {
+    position: relative;
+    height: 80%;
+    top: 7.5%;
+    float: left;
+    margin-left: 1%;
+}
+
+.reload {
+    position: relative;
+    float: right;
+    height: 15%;
+    margin-top: 1%;
+    margin-right: 1%;
+}
+
+.close {
+    position: relative;
+    float: right;
+    top: 79%;
+    left: 2%;
+    height: 15%;
+}
+
+.magnify {
+    position: relative;
+    float: right;
+    height: 105%;
+    bottom: -8%;
+    margin-right: -2%;
+}
+
+.map {
+    position: absolute;
+    background-color: #909090;
+    width: 50%;
+    height: 47%;
+    margin-top: 140px;
+    margin-left: 24.5%;
+}
+
+.map_pic {
+    position: relative;
+    height: 96%;
+    width: 98%;
+    left: 1%;
+    top: 2%;
+}
+
+.actions {
+    background-color: #909090;
+    position: absolute;
+    width: 7.5%;
+    height: 36%;
+    margin-top: 140px;
+    margin-left: 15.5%;
+}
+
+.action_pics {
+    position: relative;
+    height: 17%;
+    width: 50%;
+    left: 25%;
+    top: 4%;
+}
+
+.hoverable:hover {
+    border: solid 4px red;
+    border-radius: 5px;
+}
+
+.objects {
+    background-color: #909090;
+    position: absolute;
+    width: 7.5%;
+    height: 36%;
+    margin-top: 140px;
+    margin-left: 76%;
+}
+
+.TFM {
+    position: relative;
+    height: 23%;
+    width: auto;
+    left: 25%;
+    top: 4%;
+}
+
+.towel {
+    position: relative;
+    float: right;
+    height: 13%;
+    width: auto;
+    top: 4.5%;
+    right: 25%;
+}
