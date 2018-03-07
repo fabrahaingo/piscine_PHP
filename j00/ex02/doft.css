@@ -1,3 +1,5 @@
+/*----- General -----*/
+
 body {
     background-color: #505050;
 }
@@ -7,6 +9,13 @@ body {
     border-radius: 10px;
     box-shadow: 8px 8px 10px black;
 }
+
+.hoverable:hover {
+    border: solid 4px red;
+    border-radius: 5px;
+}
+
+/*----- Title bar -----*/
 
 .title_bar {
     background-color: #909090;
@@ -48,9 +57,11 @@ body {
     float: right;
     height: 105%;
     width: 23%;
-    bottom: -8%;
+    margin-top: 1%;
     margin-right: -2%;
 }
+
+/*----- Map -----*/
 
 .map {
     background-color: #909090;
@@ -68,6 +79,27 @@ body {
     top: 2%;
 }
 
+.map a {
+  display: block;
+  position :absolute;
+}
+
+.ikea {
+  top: 57%;
+  left: 34%;
+  height: 23%;
+  width: 11%;
+}
+
+.apple {
+  top: 56%;
+  left: 78%;
+  height: 27%;
+  width: 19%;
+}
+
+/*----- Action bar -----*/
+
 .actions {
     background-color: #909090;
     width: 7.5%;
@@ -84,10 +116,7 @@ body {
     top: 4%;
 }
 
-.hoverable:hover {
-    border: solid 4px red;
-    border-radius: 5px;
-}
+/*----- Objects bar -----*/
 
 .objects {
     background-color: #909090;
@@ -124,4 +153,50 @@ body {
     height: 20%;
     background: url("resources/brick.jpg");
     background-repeat: repeat;
+}
+
+/*----- Response field -----*/
+
+.response_field {
+  font-family: arial;
+  font-size: 0.8vw;
+  position: absolute;
+  top: 62%;
+  background-color: #88ff89;
+  height: 14%;
+  width: 24%;
+  left: 12%;
+  border-radius: 10px;
+  border: 0px;
+  box-shadow: 8px 8px 10px black;
+}
+
+.entrez {
+  font-family: times;
+  font-size: 1.9vw;
+  font-weight: normal;
+}
+
+.first_paraph {
+  margin-top: 0%;
+}
+
+.question {
+  position: relative;
+  font-size: 0.8vw;
+  top: -7%;
+}
+
+.answer {
+  position: relative;
+  width: 75%;
+  padding: 0px;
+  bottom: 18px;
+  height: 10%;
+}
+
+.answer_button {
+  position: relative;
+  bottom: 18px;
+  font-size: 1vw;
 }
