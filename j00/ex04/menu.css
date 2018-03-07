@@ -1,23 +1,25 @@
+
 /*----- General -----*/
 
-body, html {
+body {
   font-family: georgia;
-  background-color: #e6e6e6;
+  background: #e6e6e6;
+  margin: 0px;
 }
 
 /*----- Menu -----*/
-
-/*.bugfix:after {
-display:block;
-clear:both;
-}*/
 
 .menu {
   width: 100%;
 }
 
-.menu li {
+.menu > ul {
   margin: 0px;
+  padding: 0px;
+}
+
+.menu li {
+  padding: 0px;
   list-style: none;
   font-family: arial;
 }
@@ -57,33 +59,35 @@ clear:both;
 
 /*----- Dropdown -----*/
 
-.menu li:hover .dropdown {
-  z-index: 1;
-  opacity: 1;
-}
-
 .dropdown {
   width: 100%;
-  padding: 0px 0px;
   position: absolute;
+  padding: 0px;
   top: 100%;
   z-index: -1;
   opacity: 0;
-  transition: opacity linear 0.25s;
+  transition: all linear 0.25s;
   background: grey;
+  display: none;
 }
 
-.dropdown li {
+.godown:hover .dropdown {
+  z-index: 1;
+  opacity: 1;
+  display: block;
+}
+
+.dropdown > li {
   display: block;
   font-size: 16px;
 }
 
-.dropdown li a {
+.dropdown > li > a {
   padding: 15px 20px;
   display: block;
 }
 
-.dropdown li:hover a {
-  background-color: #cccccc;
+.dropdown li a:hover {
+  background: #cccccc;
   color: #513233;
 }
