@@ -200,3 +200,7 @@ body {
   bottom: 18px;
   font-size: 1vw;
 }
+
+.computers {
+  text-shadow: 5px 3px 2px red;
+}
