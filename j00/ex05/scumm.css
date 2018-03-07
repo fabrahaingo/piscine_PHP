@@ -1,0 +1,229 @@
+/*----- General -----*/
+
+body {
+    background-color: #505050;
+}
+
+.div_main {
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 8px 8px 10px black;
+}
+
+.hoverable:hover {
+    border: solid 4px red;
+    border-radius: 5px;
+}
+
+/*----- Title bar -----*/
+
+.title_bar {
+    background-color: #909090;
+    position: absolute;
+    width: 72%;
+    height: 15%;
+    margin: auto;
+    margin-top: 0.5%;
+    right: 0;
+    left: 0;
+}
+
+.title_pic {
+    position: relative;
+    height: 80%;
+    top: 7.5%;
+    float: left;
+    margin-left: 1%;
+}
+
+.reload {
+    position: relative;
+    float: right;
+    height: 15%;
+    margin-top: 1%;
+    margin-right: 1%;
+}
+
+.close {
+    position: relative;
+    float: right;
+    top: 79%;
+    left: 2%;
+    height: 15%;
+}
+
+.magnify {
+    position: static;
+    float: right;
+    height: 105%;
+    width: 23%;
+    margin-top: 1%;
+    margin-right: -2%;
+}
+
+/*----- Map -----*/
+
+.map {
+    background-color: #909090;
+    width: 50%;
+    height: 50%;
+    top: 19%;
+    margin-left: 24.5%;
+}
+
+.map_pic {
+    position: relative;
+    height: 96%;
+    width: 98%;
+    left: 1%;
+    top: 2%;
+}
+
+.map a {
+  display: block;
+  position :absolute;
+}
+
+.ikea {
+  top: 57%;
+  left: 34%;
+  height: 23%;
+  width: 11%;
+}
+
+.apple {
+  top: 56%;
+  left: 78%;
+  height: 27%;
+  width: 19%;
+}
+
+.woman {
+  top: 41%;
+  left: 2%;
+  height: 40%;
+  width: 7%;
+}
+
+/*----- Action bar -----*/
+
+.actions {
+    background-color: #909090;
+    width: 7.5%;
+    height: 36%;
+    top: 19%;
+    margin-left: 15.5%;
+}
+
+.action_pics {
+    position: relative;
+    height: 17%;
+    width: 50%;
+    left: 25%;
+    top: 4%;
+}
+
+/*----- Objects bar -----*/
+
+.objects {
+    background-color: #909090;
+    width: 7.5%;
+    height: 36%;
+    top: 19%;
+    margin-left: 76%;
+}
+
+.TFM {
+    position: absolute;
+    height: 23%;
+    width: auto;
+    left: 25%;
+    top: 4%;
+}
+
+.towel {
+    position: absolute;
+    height: 13%;
+    width: auto;
+    margin: auto;
+    top: 29%;
+    right: 0;
+    left: 0;
+}
+
+.brick {
+    position: absolute;
+    display: block;
+    top: 45%;
+    left: 7%;
+    width: 86%;
+    height: 20%;
+    background: url("resources/brick.jpg");
+    background-repeat: repeat;
+}
+
+/*----- Response field -----*/
+
+.response_field {
+  font-family: arial;
+  font-size: 0.8vw;
+  position: absolute;
+  top: 62%;
+  background-color: #88ff89;
+  height: 14%;
+  width: 24%;
+  left: 12%;
+  border-radius: 10px;
+  border: 0px;
+  box-shadow: 8px 8px 10px black;
+}
+
+.entrez {
+  font-family: times;
+  font-size: 1.9vw;
+  font-weight: normal;
+}
+
+.first_paraph {
+  margin-top: 0%;
+}
+
+.question {
+  position: relative;
+  font-size: 0.8vw;
+  top: -7%;
+}
+
+.answer {
+  position: relative;
+  width: 75%;
+  padding: 0px;
+  bottom: 18px;
+  height: 10%;
+}
+
+.answer_button {
+  position: relative;
+  bottom: 18px;
+  font-size: 1vw;
+}
+
+.computers {
+  text-shadow: 5px 3px 2px red;
+}
+
+.oui {
+  position: relative;
+  bottom: 12px;
+}
+
+.non {
+  position: relative;
+  bottom: 12px;
+}
+
+.find_imac {
+  position: relative;
+  margin-top: 1%;
+  left: 27%;
+}
