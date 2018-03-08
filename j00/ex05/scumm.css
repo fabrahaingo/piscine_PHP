@@ -15,6 +15,11 @@ body {
     border-radius: 5px;
 }
 
+.selected {
+    border: solid 4px green;
+    border-radius: 5px;
+}
+
 /*----- Title bar -----*/
 
 .title_bar {
@@ -105,6 +110,20 @@ body {
   width: 7%;
 }
 
+.computer {
+    top: 48%;
+    left: 56%;
+    height: 9%;
+    width: 5%;
+}
+
+.the_end {
+    top: 9%;
+    left: 25%;
+    height: 60%;
+    width: 32%;
+}
+
 /*----- Action bar -----*/
 
 .actions {
@@ -160,6 +179,16 @@ body {
     height: 20%;
     background: url("resources/brick.jpg");
     background-repeat: repeat;
+}
+
+.imac {
+    position: absolute;
+    height: 23%;
+    width: auto;
+    margin: auto;
+    top: 72%;
+    right: 0;
+    left: 0;
 }
 
 /*----- Response field -----*/
