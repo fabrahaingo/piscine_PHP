@@ -19,8 +19,9 @@ function is_well_formated($string) {
     return (true);
 }
 
-function get_gelim($string) {
-    
+function get_delim($string) {
+    for ($i = 0; is_numeric($string[$i]); $i++);
+    return ($string[$i]);
 }
 
 if ($argc < 2) {
@@ -29,12 +30,18 @@ if ($argc < 2) {
 }
 unset($argv[0]);
 foreach ($argv as $av) {
-    $full_imput .= $av;
+    $full_input .= $av;
 }
-trim($full_imput);
-if (is_well_formated($full_imput)) {
-    str_replace(" ", "", $full_imput);
-    $tab{}
+$full_input = trim($full_input);
+if (is_well_formated($full_input)) {
+    str_replace(" ", "", $full_input);
+    $delim = get_delim($full_input);
+    for ($i = 0; is_numeric($full_input[$i]); $i++)
+        $num1 .= $full_input[$i];
+    $i += 1;
+    for ($i; is_numeric($full_input[$i]); $i++)
+        $num2 .= $full_input[$i];
+    echo $num1 {$delim} $num2;
 }
 else
     echo "Syntax Error\n"
