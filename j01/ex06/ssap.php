@@ -5,7 +5,7 @@ if ($argc > 1) {
     unset($argv[0]);
     foreach ($argv as $v) {
         $trimed = trim($v);
-        $result = preg_replace('/\s+/', ' ', $trimed);
+        $result = str_replace('/\s+/', ' ', $trimed);
         $tab = array_filter(explode(' ', $result));
         foreach ($tab as $t)
             $final_tab[] = $t;
