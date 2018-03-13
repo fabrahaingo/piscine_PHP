@@ -1,10 +1,13 @@
 #!/usr/bin/php
 <?php
 
-$stdin = fopen("php://stdin", "r");
 while ($stdin && !feof($stdin)) {
     echo "Entrez un nombre: ";
     $num = fgets($stdin);
+    if ($num == NULL) {
+        echo "^D\n";
+        return;
+    }
     $num = str_replace("\n", "", "$num");
     if (is_numeric($num)) {
         if ($num % 2 == 0)
@@ -14,6 +17,5 @@ while ($stdin && !feof($stdin)) {
     } else
         echo "'" . $num . "' n'est pas un chiffre\n";
 }
-fclose($stdin);
 
 ?>
