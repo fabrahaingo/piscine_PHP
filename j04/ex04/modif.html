@@ -1,1 +1,94 @@
- 
+<html>
+<head>
+    <meta charset='utf-8' />
+    <style>
+
+/* ===== GENERAL ===== */
+
+        body {
+            font-family: arial;
+            background-color: lightgrey;
+            margin: 0;
+        }
+
+        div {
+            text-align: center;
+            margin: auto;
+        }
+
+        header {
+            display: block;
+            background-color: grey;
+            height: 40px;
+        }
+
+/* ===== TOP BAR ===== */
+
+        .create_account {
+            position: absolute;
+            color: white;
+            text-decoration: none;
+            left: 4%;
+            top: 2px;
+            width: 100px;
+            text-align: center;
+        }
+
+        .modify {
+            position: absolute;
+            color: white;
+            text-decoration: none;
+            top: 2px;
+            width: 100px;
+            text-align: center;
+            margin-left: 46%;
+        }
+
+        .logout {
+            position: absolute;
+            color: white;
+            text-decoration: none;
+            right: 20px;
+            top: 11px;
+            vertical-align: center;
+        }
+
+/* ===== OTHERS ===== */
+
+        .login {
+            margin-top: 10%;
+            margin-bottom: 20px;
+        }
+
+        .old_password {
+            margin-top: 30px;
+        }
+
+        .new_password {
+            margin-top: 30px;
+        }
+
+        .push {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <a class='create_account' href='create.html'>Create a new account</a>
+    <a class='modify' href='modif.html'>Modify my password</a>
+    <a class='logout' href='logout.php'>Logout</a>
+</header>
+    <form action='modif.php' method='POST'>
+        <div class='login'>Login:<br>
+            <input type='text' name='login' value='' required /></div>
+        <div class='old_password'>Old password:<br>
+            <input type='password' name='oldpw' value='' required /></div>
+        <div class='new_password'>New password:<br>
+            <input type='password' name='newpw' value='' /></div>
+        <div class='push'><input class='button' type='submit' name='submit' value='OK' /></div>
+    </form>
+</body>
+</html>
