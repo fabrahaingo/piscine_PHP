@@ -8,10 +8,15 @@
     while (($file = substr($file, 628)) != NULL)
     {
         $tab = unpack($format, $file);
-        echo $tab[user]." ";
-        echo $tab[line]." ";
-        echo date("M d H:i", $tab[time1]) ."\n";
+        if ($tab[type] == 7) {
+            $result[] = $tab[user] . " " . $tab[line] . "  " . date("M d H:i", $tab[time1]);
+        }
     }
-    print_r($tab);
+    if ($result) {
+        sort($result);
+        foreach ($result as $r) {
+            echo $r . "\n";
+        }
+    }
 
 ?>
