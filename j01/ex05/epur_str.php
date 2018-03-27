@@ -2,9 +2,11 @@
 <?php
 
 if ($argc == 2) {
-    $trimed = trim($argv[1]);
-    $result = preg_replace('/\s+/', ' ', $trimed);
-    echo $result;
+    $tab = array_filter(explode(" ", $argv[1]));
+    foreach($tab as $t)
+         $result .= $t . " ";
+    if ($result)
+        echo trim($result) . "\n";
 }
 
 ?>

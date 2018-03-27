@@ -2,7 +2,8 @@
 
 function ft_split($string) {
     $tab = array_filter(explode(" ", $string));
-    sort($tab);
+    if ($tab)
+        sort($tab);
     return $tab;
 }
 

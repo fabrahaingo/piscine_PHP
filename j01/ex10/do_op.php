@@ -13,7 +13,7 @@ if ($argc == 4) {
         $result = $argv[1] * $argv[3];
     else if ($op == '%')
         $result = $argv[1] % $argv[3];
-    echo $result;
+    echo $result . "\n";
 }
 else {
     echo "Incorrect Parameters\n";

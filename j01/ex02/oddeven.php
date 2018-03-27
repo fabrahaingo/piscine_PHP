@@ -1,6 +1,7 @@
 #!/usr/bin/php
 <?php
 
+$stdin = fopen("php://stdin", "r");
 while ($stdin && !feof($stdin)) {
     echo "Entrez un nombre: ";
     $num = fgets($stdin);

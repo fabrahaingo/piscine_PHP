@@ -10,9 +10,11 @@ if ($argc > 1) {
         foreach ($tab as $t)
             $final_tab[] = $t;
     }
-    sort($final_tab);
-    foreach ($final_tab as $ft) {
-        echo $ft . "\n";
+    if ($final_tab) {
+        sort($final_tab);
+        foreach ($final_tab as $ft) {
+            echo $ft . "\n";
+        }
     }
 }
 
