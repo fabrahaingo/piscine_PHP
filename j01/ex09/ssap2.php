@@ -1,12 +1,15 @@
 #!/usr/bin/php
 <?php
 
+function filter($var){
+  return ($var !== NULL && $var !== FALSE && $var !== '');
+}
+
 if ($argc > 1) {
     unset($argv[0]);
     foreach ($argv as $v) {
         $trimed = trim($v);
-        $result = preg_replace('/\s+/', ' ', $trimed);
-        $tab = array_filter(explode(' ', $result));
+        $tab = array_filter(explode(' ', $trimed), 'filter');
         foreach ($tab as $t) {
             if (ord($t[0]) < 48 || (ord($t[0]) >= 58 && ord($t[0]) <= 64) ||
             (ord($t[0]) >= 91 && ord($t[0]) <= 96) || ord($t[0] > 123))
