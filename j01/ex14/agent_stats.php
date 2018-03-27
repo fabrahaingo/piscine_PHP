@@ -32,27 +32,26 @@ $tab = fill_tab($stdin);
 if ($argc == 2) {
     if ($argv[1] == "moyenne") {
         foreach ($tab as $t) {
-            if (is_numeric($t[note])) {
+            if (is_numeric($t[note]) && $t[noteur] != "moulinette") {
                 $total += $t[note];
                 $nb_grades++;
             }
         }
         $result = $total / $nb_grades;
         if ($result != NULL)
-
             echo $result . "\n";
     }
     else if ($argv[1] == "moyenne_user") {
         $tab = sort_alpha("user", $tab);
         for ($i = 0; $tab[$i]; $i++) {
             while ($tab[$i][user] == $tab[$i + 1][user]) {
-                if (is_numeric($tab[$i][note])) {
+                if (is_numeric($tab[$i][note]) && $tab[$i][noteur] != "moulinette") {
                     $total += $tab[$i][note];
                     $nb_grades++;
                 }
                 $i++;
             }
-            if (is_numeric($tab[$i][note])) {
+            if (is_numeric($tab[$i][note]) && $tab[$i][noteur] != "moulinette") {
                 $total += $tab[$i][note];
                 $nb_grades++;
             }
