@@ -9,7 +9,9 @@ if ($username != "zaz" || $password != "jaimelespetitsponeys") {
 }
 else {
     $img = base64_encode(file_get_contents('../../img/42.png'));
-    echo "<html><body>Bonjour Zaz<br /><img src='data:image/png;base64,".$img."')</img></body></html>";
+?>
+<html><body>Bonjour Zaz<br /><img src='data:image/png;base64, \" . $img . \"'</img></body></html>
+<?php
 }
 
 ?>
