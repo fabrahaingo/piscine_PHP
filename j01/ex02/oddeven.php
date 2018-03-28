@@ -10,12 +10,14 @@ while ($stdin && !feof($stdin)) {
         return;
     }
     $num = str_replace("\n", "", "$num");
+    $check = substr($num, strlen($num) - 1);
     if (is_numeric($num)) {
-        if ($num % 2 == 0)
+        if ($check % 2 == 0)
             echo "Le chiffre " . $num . " est Pair\n";
         else
             echo "Le chiffre " . $num . " est Impair\n";
-    } else
+    }
+    else
         echo "'" . $num . "' n'est pas un chiffre\n";
 }
 
