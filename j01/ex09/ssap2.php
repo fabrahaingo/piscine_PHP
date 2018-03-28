@@ -35,7 +35,6 @@ function is_sort($word1, $word2) {
         return true;
     else
         return false;
-    #return strlen($word1) <= strlen($word2) ? true : false;
 }
 
 $result = array();
