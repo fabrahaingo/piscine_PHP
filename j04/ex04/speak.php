@@ -16,7 +16,7 @@ else {
         flock($fd, LOCK_EX);
         $message['login'] = $_SESSION['loggued_on_user'];
         $message['time'] = time();
-        $message['msg'] = $_POST['new_message'];
+        $message['msg'] = strip_tags($_POST['new_message']);
         $full_conversation[] = $message;
         file_put_contents("../private/chat", serialize($full_conversation));
         fclose($fd);
@@ -31,6 +31,7 @@ else {
         width: 90%;
         height: 33px;
         padding: 0;
+        overflow: hidden;
     }
 
     .button {
@@ -45,7 +46,7 @@ else {
 </head>
 <body>
 <form action='speak.php' method='POST'>
-    <input class="chat_field" type='text' name="new_message" value='' />
+    <input class="chat_field" type='text' name="new_message" value='' maxlengh='500' accept-charset="ISO-8859-1" autofocus/>
     <input class="button" type='submit' name='submit' value='Send' />
 </form>
 </body>

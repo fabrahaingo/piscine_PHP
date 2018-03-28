@@ -10,6 +10,7 @@ if (auth($login, $passwd)) {
     <html>
     <head>
         <meta charset='utf-8' />
+        <title>42Chat - <?php echo ucfirst($_SESSION['loggued_on_user']); ?></title>
         <style>
     /* ===== GENERAL ===== */
             body {
@@ -22,6 +23,10 @@ if (auth($login, $passwd)) {
                 display: block;
                 background-color: grey;
                 height: 40px;
+            }
+
+            iframe {
+                border: none;
             }
 
     /* ===== TOP BAR ===== */
@@ -60,7 +65,7 @@ if (auth($login, $passwd)) {
     <header>
         <a class='create_account' href='create.html'>Create a new account</a>
         <a class='modify' href='modif.html'>Modify my password</a>
-        <a class='logout' href='logout.php'>Log out of <?php echo $_SESSION['loggued_on_user']; ?></a>
+        <a class='logout' href='logout.php'>Log out of <?php echo ucfirst($_SESSION['loggued_on_user']); ?></a>
     </header>
         <iframe name="chat" src="chat.php" width="100%" height="550px"></iframe>
         <iframe name="speak" src="speak.php" width="100%" height="50px" scrolling='no'></iframe>

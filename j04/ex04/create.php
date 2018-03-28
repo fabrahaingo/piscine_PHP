@@ -9,7 +9,7 @@ if ($_POST['login'] && $_POST['passwd'] && $_POST['submit'] === "OK") {
     $there = 0;
     if ($accounts) {
         foreach ($accounts as $user_id => $user_infos) {
-            if ($user_infos['login'] === $_POST['login']) {
+            if ($user_infos['login'] === trim($_POST['login'])) {
                 header('Refresh: 2; URL="create.html"');
                 echo "This login is already taken, please choose another one.\n";
                 $there = 1;
