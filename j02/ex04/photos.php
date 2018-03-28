@@ -41,18 +41,17 @@ if ($there != FALSE) {
             unlink($name);
         rmdir($dir_name);
     }
-    $dir = "./" . $dir_name;
-    mkdir($dir);
+    mkdir($argv[1] . "/");
     foreach($array[0] as $ar) {
-        if (preg_match('#src="(https?://.*?)"#i', $ar, $tab)) {
-            $url = $tab[1];
+        if (preg_match('#src="(https?://)(.*?)"#i', $ar, $tab)) {
+            $url = $tab[2];
         }
         else if (preg_match('#src="(.*?)"#i', $ar, $tab)) {
-            $url = $dir_name . $tab[1];
+            $url = $argv[1] . $tab[1];
         }
         echo $url . "\n";
         $file = getFileName($url);
-        file_put_contents($dir . "/" . $file, getFile($url));
+        file_put_contents($url, getFile($url));
     }
 }
 
