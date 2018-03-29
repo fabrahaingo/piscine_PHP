@@ -14,8 +14,8 @@ function getFile($url) {
 }
 
 function getDirName($fullName) {
-    if (preg_match('#https?://(.*?)#', $fullName, $tab))
-        return ($tab[0]);
+    if (preg_match('#https?://(.*)#', $fullName, $tab))
+        return ($tab[1]);
     else
         return ($fullName);
 }
@@ -36,12 +36,12 @@ $there = preg_match_all('#<img.*?>#is', $code, $array);
 if ($there != FALSE) {
     $dir_name = getDirName($argv[1]);
     if (file_exists($dir_name)) {
-        $files = glob("./".$dir_name."/*");
+        $files = glob("./" . $dir_name . "/*");
         foreach ($files as $name)
             unlink($name);
         rmdir($dir_name);
     }
-    mkdir($argv[1] . "/");
+    mkdir($dir_name . "/");
     foreach($array[0] as $ar) {
         if (preg_match('#src="(https?://)(.*?)"#i', $ar, $tab)) {
             $url = $tab[2];
@@ -51,7 +51,8 @@ if ($there != FALSE) {
         }
         echo $url . "\n";
         $file = getFileName($url);
-        file_put_contents($url, getFile($url));
+        echo $dir_name . "\n";
+        file_put_contents($dir_name . "/" . $file, getFile($url));
     }
 }
 

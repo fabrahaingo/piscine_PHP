@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 
 date_default_timezone_set("Europe/Paris");
@@ -27,7 +28,8 @@ $month = array(
 );
 $tab = explode(" ", $argv[1]);
 if (count($tab) != 5) {
-    echo "Wrong format\n";
+    if ($argc > 1)
+        echo "Wrong format\n";
     return;
 }
 for($i = 0; $i < 7; $i++) {
