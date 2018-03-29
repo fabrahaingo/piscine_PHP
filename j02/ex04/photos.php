@@ -23,7 +23,6 @@ function getDirName($fullName) {
 function getFileName($url) {
     $file = strrchr($url, '/');
     $file = substr($file, 1);
-    echo $file . "\n";
     return ($file);
 }
 
@@ -49,9 +48,7 @@ if ($there != FALSE) {
         else if (preg_match('#src="(.*?)"#i', $ar, $tab)) {
             $url = $argv[1] . $tab[1];
         }
-        echo $url . "\n";
         $file = getFileName($url);
-        echo $dir_name . "\n";
         file_put_contents($dir_name . "/" . $file, getFile($url));
     }
 }
