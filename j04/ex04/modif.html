@@ -21,6 +21,10 @@
             height: 40px;
         }
 
+        ::placeholder {
+            color: lightgrey;
+        }
+
 /* ===== TOP BAR ===== */
         .create_account {
             position: absolute;
@@ -76,16 +80,16 @@
 <body>
 <header>
     <a class='create_account' href='create.html'>Create a new account</a>
-    <a class='modify' href='modif.html'>Modify my password</a>
+    <a class='modify' href='index.html'>Return to login page</a>
     <a class='logout' href='logout.php'>Logout</a>
 </header>
     <form action='modif.php' method='POST'>
         <div class='login'>Login:<br>
-            <input type='text' name='login' value='' required autofocus/></div>
+            <input type='text' name='login' value='' placeholder="Username" required autofocus/></div>
         <div class='old_password'>Old password:<br>
-            <input type='password' name='oldpw' value='' required /></div>
+            <input type='password' name='oldpw' value='' placeholder="Current password" required/></div>
         <div class='new_password'>New password:<br>
-            <input type='password' name='newpw' value='' /></div>
+            <input type='password' name='newpw' value='' placeholder="Your new password" required/></div>
         <div class='push'><input class='button' type='submit' name='submit' value='OK' /></div>
     </form>
 </body>

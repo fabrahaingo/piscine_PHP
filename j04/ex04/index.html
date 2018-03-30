@@ -21,6 +21,10 @@
             height: 40px;
         }
 
+        ::placeholder {
+            color: lightgrey;
+        }
+
 /* ===== TOP BAR ===== */
         .create_account {
             position: absolute;
@@ -73,13 +77,12 @@
 <header>
     <a class='create_account' href='create.html'>Create a new account</a>
     <a class='modify' href='modif.html'>Modify my password</a>
-    <a class='logout' href='logout.php'>Logout</a>
 </header>
     <form action='login.php' method='POST'>
         <div class='login'>Login:<br>
-            <input type='text' name='login' value='' autofocus/></div>
+            <input type='text' name='login' value='' placeholder="Username" autofocus required/></div>
         <div class='password'>Password:<br>
-            <input type='password' name='passwd' value='' /></div>
+            <input type='password' name='passwd' value='' placeholder="Password" required/></div>
         <div class='push'><input class='button' type='submit' name='submit' value='OK' /></div>
     </form>
 </body>

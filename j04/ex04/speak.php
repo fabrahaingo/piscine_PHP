@@ -6,9 +6,10 @@ if (!($_SESSION['loggued_on_user'])) {
     echo "You are not currently connected. Please log in.\n";
 }
 else {
-    if ($_POST['new_message']) {
+    if (isset($_POST['new_message']) && $_POST['new_message']) {
         if (!file_exists("../private/chat")) {
-            mkdir("../private");
+            if (!file_exists("../private"))
+                mkdir("../private");
             file_put_contents("../private/chat", null);
         }
         $full_conversation = unserialize(file_get_contents("../private/chat"));
@@ -36,9 +37,11 @@ else {
 
     .button {
         width: 9%;
+        text-align: center;
         border: none;
-        padding: 9.5px;
-        margin-left: 8px;
+        padding: 9.5px 0;
+        float: right;
+        margin-right: 10px;
     }
 
     </style>

@@ -10,6 +10,7 @@ else {
     if (file_exists('../private/chat')) {
         $full_conversation = unserialize(file_get_contents('../private/chat'));
     }
+    if (file_exists('../private/chat') && $full_conversation) {
 ?>
     <html>
     <head>
@@ -34,6 +35,7 @@ else {
     </head>
     <body onload="pageScroll()">
 <?php
+        $last_user = "";
         foreach ($full_conversation as $message) {
 ?>
         <div class='message'>
@@ -52,6 +54,7 @@ else {
         </div>
 <?php
         }
+    }
 ?>
         </div>
     </body>
