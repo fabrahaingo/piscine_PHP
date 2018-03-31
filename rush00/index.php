@@ -1,4 +1,3 @@
-<?php include ('session_start.php'); ?>
 <?php
 
 /* ===== Each book category has its one and only price ===== */
