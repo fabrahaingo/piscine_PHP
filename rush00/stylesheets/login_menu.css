@@ -1,3 +1,5 @@
+/* ===== WHEN NOT LOGGED IN ===== */
+
 .top_login {
     font-family: arial;
     display: block;
@@ -16,6 +18,8 @@
     transition: all linear 0.25s;
 }
 
+/* ===== WHEN LOGGED IN ===== */
+/* ===== MODIFY ACCOUNT ===== */
 .special1 {
     font-family: arial;
     display: block;
@@ -35,6 +39,8 @@
     background-color: grey;
     transition: all linear 0.25s;
 }
+
+/* ===== LOGOUT ===== */
 
 .special2:hover {
     color: #e6e6e6;
