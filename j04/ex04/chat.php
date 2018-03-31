@@ -2,7 +2,7 @@
 
 date_default_timezone_set('Europe/Paris');
 session_start();
-if (!($_SESSION['loggued_on_user'])) {
+if (!($_SESSION['logged_on_user'])) {
     header('Refresh: 2; URL="index.html"');
     echo "You are not currently connected. Please log in.\n";
 }

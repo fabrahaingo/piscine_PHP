@@ -5,12 +5,12 @@ include 'auth.php';
 isset($_POST['login']) ? $login = $_POST['login'] : $login = "";
 isset($_POST['passwd']) ? $passwd = $_POST['passwd'] : $passwd = "";
 if (auth($login, $passwd)) {
-    $_SESSION['loggued_on_user'] = $login;
+    $_SESSION['logged_on_user'] = $login;
 ?>
     <html>
     <head>
         <meta charset='utf-8' />
-        <title>42Chat - <?php echo ucfirst($_SESSION['loggued_on_user']); ?></title>
+        <title>42Chat - <?php echo ucfirst($_SESSION['logged_on_user']); ?></title>
         <style>
     /* ===== GENERAL ===== */
             body {
@@ -65,7 +65,7 @@ if (auth($login, $passwd)) {
     <header>
         <a class='create_account' href='create.html'>Create a new account</a>
         <a class='modify' href='modif.html'>Modify my password</a>
-        <a class='logout' href='logout.php'>Log out of <?php echo ucfirst($_SESSION['loggued_on_user']); ?></a>
+        <a class='logout' href='logout.php'>Log out of <?php echo ucfirst($_SESSION['logged_on_user']); ?></a>
     </header>
         <iframe name="chat" src="chat.php" width="100%" height="550px"></iframe>
         <iframe name="speak" src="speak.php" width="100%" height="50px" scrolling='no'></iframe>
@@ -76,7 +76,7 @@ if (auth($login, $passwd)) {
 
 }
 else {
-    $_SESSION['loggued_on_user'] = '';
+    $_SESSION['logged_on_user'] = '';
     header('Refresh: 2; URL="index.html"');
     echo "The login/password you entered is wrong, try again.\n";
 }

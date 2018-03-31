@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if (!($_SESSION['loggued_on_user'])) {
+if (!($_SESSION['logged_on_user'])) {
     header('Refresh: 2; URL="index.html"');
     echo "You are not currently connected. Please log in.\n";
 }
@@ -15,7 +15,7 @@ else {
         $full_conversation = unserialize(file_get_contents("../private/chat"));
         $fd = fopen("../private/chat", 'w');
         flock($fd, LOCK_EX);
-        $message['login'] = $_SESSION['loggued_on_user'];
+        $message['login'] = $_SESSION['logged_on_user'];
         $message['time'] = time();
         $message['msg'] = strip_tags($_POST['new_message']);
         $full_conversation[] = $message;
