@@ -1,16 +1,20 @@
+<?php include ('session_start.php'); ?>
 <?php
 
 /* ===== Each book category has its one and only price ===== */
 if (isset($_POST['cart']) && $_POST['cart'] === "Add to cart") {
-    if (!isset($_SESSION['cart_amount']))
+    if (!(isset($_SESSION['cart_amount'])))
         $_SESSION['cart_amount'] = 0;
-    $_SESSION['product_price'] = ""; /* Need a function there that could get the price of the item, depending on the name POSTed */
-    header('Location: ' . $_SERVER['PHP_SELF']);
-}
-
-/* ===== Empty the cart ===== */
-if (isset($_POST['empty_cart']) && $_POST['empty_cart'] === "Empty") {
-    $_SESSION['cart_amount'] = null;
+    $_SESSION['product_price'] = ($_POST['price'] * $_POST['quantity']);
+/* ===== PRICE OF CART ARTICLE ===== */
+    if (!isset($_SESSION[$_POST['title_to_add']]))
+        $_SESSION[$_POST['title_to_add']]['price'] = $_POST[$_SESSION['product_price']];
+/* ===== QUANTITY OF CART ARTICLE ===== */
+/* ===== If the item is already in the cart, increase its quantity ===== */
+    if (isset($_SESSION[$_POST['title_to_add']]['quantity']))
+        $_SESSION[$_POST['title_to_add']]['quantity'] = $_POST['quantity'];
+    else
+        $_SESSION[$_POST['title_to_add']]['quantity'] += $_POST['quantity'];
     header('Location: ' . $_SERVER['PHP_SELF']);
 }
 
@@ -28,10 +32,6 @@ if (isset($_POST['empty_cart']) && $_POST['empty_cart'] === "Empty") {
     </header>
         <?php include ('main_page.php'); ?>
         <?php include ('footer.php'); ?>
-    <form action="index.php" method="POST">
-        <input type="submit" name="cart" value="Add to cart" /><br />
-        <input type="submit" name="empty_cart" value="Empty" />
-    </form>
 
 </body>
 <html>
