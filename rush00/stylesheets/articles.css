@@ -1,9 +1,37 @@
 .article {
     text-align: center;
     font-family: Arial;
+    margin: 50px 30px;
+    display: inline-block;
+    width: 200px;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 12px;
+    background: rgba(200, 200, 200, 0.5);
+    box-shadow: 0px 1px 27px -3px #888888;
+    transition: box-shadow 2s;
+    transition: background 0.5s;
 }
 
 .article > img {
     width: 100px;
     height: 100px;
+}
+
+.article:hover {
+    background: rgba(200, 200, 200, 1);
+    box-shadow: 0px 1px 22px 3px #888888;
+}
+
+.items {
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 70px;
+    margin-top: 20px;
+    box-shadow: 0px 1px 27px -3px #888888;
+    border-radius: 10px;
+    background-image: url("https://www.welovesolo.com/wp-content/uploads/2014/10/0cd91cc08db2c547a25256c268edfc3b-details.jpg");
+    background-repeat: repeat;
 }

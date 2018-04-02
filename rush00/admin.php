@@ -1,10 +1,6 @@
 <?php
 include ('session_start.php');
 
-
-
-// $logins = unserialize(file_get_contents('./private/passwd'));
-// print_r($logins);
 /* ===== Change that with the real authentification function === */
 if (isset($_POST['title']) && isset($_POST['price']) && isset($_POST['submit']) && $_POST['submit'] === 'Register')
 {
@@ -29,6 +25,7 @@ else if (isset($_POST['submit']) && $_POST['submit'] === 'delete')
     $books = unserialize(file_get_contents('./db/books'));
     }
     unset($books[$_POST['title']]);
+
     file_put_contents('./db/books', serialize($books));
 }
 else if (isset($_POST['login_delete']) && $_POST['login_delete'] === 'delete')
@@ -38,8 +35,15 @@ else if (isset($_POST['login_delete']) && $_POST['login_delete'] === 'delete')
       if ($_POST['login'] === $value['login'])
       {
           unset($logins[$key]['login']);
+
       }
     }
+}
+elseif (isset($_POST['cart_sent']) && $_POST['cart_sent'] === 'sent')
+{
+  $orders = unserialize(file_get_contents('./db/archives'));
+  unset($orders[$_POST['login_sent']]);
+  file_put_contents("./db/archives",serialize($orders));
 }
 
 if (isset($_COOKIE['logged_on_user']) && ($_COOKIE['logged_on_user'] === "fabien" || $_COOKIE['logged_on_user'] === "scarlett")) {
@@ -87,13 +91,49 @@ if (isset($_COOKIE['logged_on_user']) && ($_COOKIE['logged_on_user'] === "fabien
         </form>
   <br><br>
 
-  <form class="register_form" action='admin.php' method='POST'>
+    <form class="register_form" action='admin.php' method='POST'>
       <div class='title'>Account Delete<br><br>
       <div class='price'>Login<br>
                       <input type='text' name='login' value='' placeholder="Max. 12 characters" required/></div>
       <div class='push'><input class='button' type='submit' name='login_delete' value='delete' /></div>
     </form>
-        <?php include ('footer.php'); ?>
+  <br><br>
+
+    <form class="register_form" action='admin.php' method='POST'>
+        <div action="./admin.php" class='title'>Customers'orders<br><br>
+      <?php
+      $users = unserialize(file_get_contents('./private/passwd'));
+      $orders = unserialize(file_get_contents('./db/archives'));
+      $books = unserialize(file_get_contents('./db/books'));
+      $idonline = 2;
+      foreach ($users as $user)
+      {
+          if(isset($orders[$user['login']]))
+          {
+              $idonline = 3;
+              ?> <div class=""> <?php echo $user['login']; ?> </div><br> <?php
+              foreach ($books as $key_title => $val)
+              {
+                if(isset($orders[$user['login']][$val['title']]))
+                {
+                  ?> <div class=""> <?php echo $key_title."   ".$orders[$user['login']][$val['title']];?> </div> <?php
+                }
+              }
+                  ?>
+                  <form action="./admin.php" method="POST">
+                    <input type="hidden" name="login_sent" value="<?php echo $user['login']; ?>" />
+                  <div class='push'><input class='button' type='submit' name='cart_sent' value='sent' /></div>
+                 </form>
+                 <br><br>
+                 <?php
+          }
+      }
+      if ($idonline === 2)
+      ?> <div class=""> You are up to date </div><br> <?php
+
+       ?>
+       </div>
+<?php include ('footer.php'); ?>
 </body>
 <html>
 <?php
