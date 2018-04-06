@@ -1,0 +1,50 @@
+<html>
+<head>
+    <style>
+        #balloon {
+            height: 200px;
+            width: 200px;
+            background: red;
+            border-radius: 50%;
+        }
+    </style>
+    <script>
+
+        function changeColor() {
+            var balloon = document.getElementById("balloon");
+            if (balloon.offsetHeight < 420) {
+                balloon.style.height = balloon.offsetHeight + 10;
+                balloon.style.width = balloon.offsetWidth + 10;
+            }
+            else {
+                balloon.style.height = 200;
+                balloon.style.width = 200;
+            }
+            if (balloon.style.background == 'red')
+                balloon.style.background = 'green';
+            else if (balloon.style.background == 'green')
+                balloon.style.background = 'blue';
+            else
+                balloon.style.background = 'red';
+        }
+
+        function smaller() {
+            var balloon = document.getElementById("balloon");
+            if (balloon.offsetHeight > 200) {
+                balloon.style.height = balloon.offsetHeight - 5;
+                balloon.style.width = balloon.offsetWidth - 5;
+            }
+            if (balloon.style.background == 'red')
+                balloon.style.background = 'blue';
+            else if (balloon.style.background == 'blue')
+                balloon.style.background = 'green';
+            else
+                balloon.style.background = 'red';
+        }
+    </script>
+</head>
+<body>
+    <div id="balloon" onclick="changeColor()" onmouseout="smaller()">
+    </div>
+</body>
+</html>
