@@ -4,25 +4,45 @@
     </style>
     <script>
         function calculate() {
-            var left_value = document.getElementById("left").value;
-            var right_value = document.getElementById("right").value;
+            var left_value = parseInt(document.getElementById("left").value);
+            var right_value = parseInt(document.getElementById("right").value);
             var operator = document.getElementById("operator").value;
-            if (((left_value) <= 0 || parseInt(right_value) <= 0)) {
+            if (!Number.isInteger(left_value) || !Number.isInteger(right_value)) {
+                alert("Error :(");
+                return ;
+            }
+            if (((left_value) < 0 || right_value < 0)) {
                 alert("Error :(");
                 return ;
             }
             if (operator == "+")
-                var result = parseInt(left_value) + parseInt(right_value);
+                var result = left_value + right_value;
             if (operator == "-")
-                var result = parseInt(left_value) - parseInt(right_value);
+                var result = left_value - right_value;
             if (operator == "*")
-                var result = parseInt(left_value) * parseInt(right_value);
-            if (operator == "/")
-                var result = parseInt(left_value) / parseInt(right_value);
-            if (operator == "%")
-                var result = parseInt(left_value) % parseInt(right_value);
+                var result = left_value * right_value;
+            if (operator == "/") {
+                if (right_value == "0") {
+                    alert("It's over 9000 !");
+                    console.log("It's over 9000!");
+                    return ;
+                }
+                var result = left_value / right_value;
+            }
+            if (operator == "%") {
+                if (right_value == 0) {
+                    alert("It's over 9000 !");
+                    console.log("It's over 9000!");
+                    return ;
+                }
+                var result = left_value % right_value;
+            }
             console.log(result);
-            alert(parseInt(result));
+            alert(result);
+        }
+
+        function please_use_me() {
+            alert("Please, use me...");
         }
     </script>
 </head>
@@ -39,5 +59,8 @@
         <input type="text" id="right" />
         <input type="submit" value="Try me!" />
     </form>
+    <script>
+        setInterval(please_use_me, 1000 * 30);
+    </script>
 </body>
 </html>
